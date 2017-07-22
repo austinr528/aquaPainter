@@ -29,13 +29,18 @@ def player(x,y):
 
 x=displayWidth*.45
 y=displayHeight*.55
+
+xChange=0
+
 dead = False
 
 while not dead:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             dead=True
-
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                
         #print(event)
     gameDisplay.fill(white)
     #instantiate the player
