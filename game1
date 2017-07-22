@@ -1,0 +1,48 @@
+from flask import Flask
+import pygame
+
+
+
+pygame.init()
+#window size variables
+displayWidth = 800
+displayHeight = 600
+#color
+black = (0,0,0)
+white = (255, 255, 255)
+red = (255,0,0)
+green = (0,255,0)
+blue = (0,0,255)
+
+
+
+#game window creation
+gameDisplay = pygame.display.set_mode((displayWidth, displayHeight))
+pygame.display.set_caption('the game for bosses')
+#instantiate a clock
+clock = pygame.time.Clock()
+
+playerImg = pygame.image.load('boss of all bosses.png')
+
+def player(x,y):
+    gameDisplay.blit(playerImg,(x,y))
+
+x=displayWidth*.45
+y=displayHeight*.55
+dead = False
+
+while not dead:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            dead=True
+
+        #print(event)
+    gameDisplay.fill(white)
+    #instantiate the player
+    player(x,y)
+    pygame.display.update()
+    #frame rate
+    clock.tick(60)
+
+pygame.quit()
+quit()
