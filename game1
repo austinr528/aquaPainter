@@ -47,7 +47,7 @@ while not dead:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 xChange = 0
 
-
+    #this is where it moves
     x+=xChange
         #print(event)
     gameDisplay.fill(white)
